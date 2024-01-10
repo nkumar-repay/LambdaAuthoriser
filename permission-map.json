@@ -1,0 +1,11 @@
+{
+    "{ \"url\": \"/api/v1/database/migrations\", \"method\": \"GET\" }": "sms__repay__can_run_migration",
+    "{ \"url\": \"/api/v1/sms/message\", \"method\": \"POST\" }": "sms__repay__can_send_message",
+    "{ \"url\": \"/api/v1/sms/status/:smsId\", \"method\": \"GET\" }": "sms__repay__can_view_message",
+    "{ \"url\": \"/api/v1/sms/conversation/:conversationId\", \"method\": \"GET\" }": "sms__repay__can_view_conversation",
+    "{ \"url\": \"/api/v1/sms/merchant\", \"method\": \"GET\" }": "sms__repay__can_view_merchant",
+    "{ \"url\": \"/api/v1/sms/merchant\", \"method\": \"POST\" }": "sms__repay__can_create_merchant",
+    "{ \"url\": \"/api/v1/sms/merchant\", \"method\": \"PUT\" }": "sms__repay__can_update_merchant",
+    "{ \"url\": \"/api/v1/sms/merchant/:merchantId\", \"method\": \"DELETE\" }": "sms__repay__can_delete_merchant",
+    "{ \"url\": \"/api/v1/sms/merchant/:merchantId\", \"method\": \"GET\" }": "sms__repay__can_view_merchant"
+}

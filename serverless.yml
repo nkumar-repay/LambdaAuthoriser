@@ -1,0 +1,31 @@
+#org: nishant-repay
+#app: sms-api
+service: sms-auth-service
+
+provider:
+  name: aws
+  runtime: java17
+  region: us-east-1
+  stage: dev
+  stackTags:
+    serviceName: sms
+    stackName: "sms-auth-service"
+    app_name: "repay-sms-service"
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ec2:*"
+      Resource: "*"
+
+package:
+  artifact: target/LambdaAuthorizer-1.0.0-aws.jar
+
+functions:
+  authRepayLoggedIn:
+    name: ${self:service}-authRepayLoggedIn
+    handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker
+    environment:
+      OPA_URL: 'https://opa-auth.internal.uat.repay.net/v1/data/http/authz'
+      PERMISSION: repay_logged_in
+      FUNCTION_NAME: LambdaAuthorizer
+    timeout: 30
